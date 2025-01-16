@@ -1,0 +1,7 @@
+[
+  { "state": "UT", "taxRate": "0.0685" },
+  { "state": "NV", "taxRate": "0.08" },
+  { "state": "TX", "taxRate": "0.0625" },
+  { "state": "AL", "taxRate": "0.04" },
+  { "state": "CA", "taxRate": "0.0825" }
+]
