@@ -11,6 +11,19 @@ console.log(discountRates)
 
 document.querySelector('#form').addEventListener('submit', e => {
     e.preventDefault()
-    console.log(items.value * price.value * (1 + state.value))
-    document.querySelector('#result').innerHTML = items.value * price.value * (1 + parseFloat(state.value))
+
+    let total = items.value * price.value * (1 + parseFloat(state.value))
+
+    let discountIndex = -1
+    discountRates.forEach((rate, i) => {
+        if (rate.orderValue <= total) {
+            discountIndex = i
+        }
+    })
+
+    if (discountIndex > -1) {
+        total *= (1 - discountRates[discountIndex].discountRate)
+    }
+
+    document.querySelector('#result').innerHTML = total
 })
